@@ -1,0 +1,372 @@
+
+:root {
+    --bg: #061018;
+    --sidebar: #08151d;
+    --card: #0e2029;
+    --green: #00e59b;
+    --text: #f0f7f8;
+    --muted: #9bafbb;
+    --border: #1b4147;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 245px;
+    flex-shrink: 0;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    padding: 25px 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    width: 150px;
+    max-width: 100%;
+    filter: drop-shadow(0 0 12px #00e59b55);
+}
+
+.sidebar h2 {
+    color: var(--green);
+    margin: 8px 0;
+}
+
+.sidebar p {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.sidebar nav {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 14px;
+    margin-bottom: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.sidebar nav a:hover {
+    background: #073e32;
+    color: var(--green);
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #104137, #0b1d28);
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(26px, 4vw, 42px);
+    margin: 10px 0;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p,
+.scanner-card p,
+.stat-card p {
+    color: var(--muted);
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.hero-tags span {
+    background: #063a30;
+    border: 1px solid #236455;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* STATISTICS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 14px;
+    transition: 0.2s;
+}
+
+.stat-card:hover {
+    border-color: var(--green);
+}
+
+.stat-card h3 {
+    font-size: 32px;
+    color: var(--green);
+    margin: 0;
+}
+
+.stat-card p {
+    margin-top: 10px;
+}
+
+/* SCANNER CARDS */
+
+.scanner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.scanner-card {
+    background: var(--card);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    min-width: 0;
+    transition: 0.25s;
+}
+
+.scanner-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+    box-shadow: 0 0 20px #00e59b15;
+}
+
+.scanner-icon {
+    font-size: 30px;
+}
+
+.scanner-card h2 {
+    font-size: 20px;
+}
+
+.scanner-card p {
+    line-height: 1.6;
+}
+
+/* INPUT FIELDS */
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 13px;
+    background: #07141c;
+    color: white;
+    border: 1px solid #34535e;
+    border-radius: 9px;
+    font: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: 1px solid var(--green);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* BUTTONS */
+
+button {
+    width: 100%;
+    padding: 13px;
+    background: var(--green);
+    color: #04140f;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #5affc3;
+    box-shadow: 0 0 15px #00e59b40;
+}
+
+/* SCAN RESULTS */
+
+.results {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 16px;
+}
+
+#resultText {
+    padding: 18px;
+    background: #07141c;
+    border-radius: 10px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.warning {
+    color: #f2c777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 35px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Medium screens: two scanner columns */
+
+@media (max-width: 1050px) {
+    .scanner-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Small screens: one scanner column */
+
+@media (max-width: 750px) {
+    .scanner-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile screens */
+
+@media (max-width: 650px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .sidebar nav {
+        margin-top: 15px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 25px;
+    }
+}
+
+/* Sticky sidebar on large screens */
+
+@media (min-width: 1100px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+/* PROFESSIONAL FINISHING TOUCHES */
+
+.hero {
+    box-shadow: 0 8px 35px rgba(0, 229, 155, 0.08);
+}
+
+.scanner-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.scanner-card button {
+    margin-top: auto;
+}
+
+.scanner-card:focus-within {
+    border-color: var(--green);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.sidebar-logo {
+    transition: transform 0.3s ease;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.05);
+}
+/* CyberTwin v1.5 - Dynamic Report */
+
+.hash-panel[hidden] {
+    display: none !important;
+}
